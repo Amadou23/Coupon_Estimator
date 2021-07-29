@@ -11,10 +11,10 @@ from pages import index, predictions, insights, process
 
 # Navbar docs: https://dash-bootstrap-components.opensource.faculty.ai/l/components/navbar
 navbar = dbc.NavbarSimple(
-    brand='YOUR APP NAME',
+    brand='Coupon Predictor',
     brand_href='/', 
     children=[
-        dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
+        dbc.NavItem(dcc.Link('Predictions', href='/pagename', className='nav-link')), 
         dbc.NavItem(dcc.Link('Insights', href='/insights', className='nav-link')), 
         dbc.NavItem(dcc.Link('Process', href='/process', className='nav-link')), 
     ],
@@ -35,10 +35,10 @@ footer = dbc.Container(
         dbc.Col(
             html.P(
                 [
-                    html.Span('Your Name', className='mr-2'), 
+                    html.Span('Amadou N\'Gom          ', className='Amadou N\'Gom'), 
                     html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:<you>@<provider>.com'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/<you>/<repo>'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/<you>/'), 
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/Amadou23/Coupons'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/amadou-n-gom-252611215/'), 
                     html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
                 ], 
                 className='lead'
@@ -58,7 +58,7 @@ app.layout = html.Div([
     html.Hr(), 
     footer
 ])
-
+from pages import index, predictions, insights, process, pagename
 
 # URL Routing for Multi-Page Apps: https://dash.plot.ly/urls
 @app.callback(Output('page-content', 'children'),
@@ -72,6 +72,8 @@ def display_page(pathname):
         return insights.layout
     elif pathname == '/process':
         return process.layout
+    elif pathname == '/pagename':
+        return pagename.layout
     else:
         return dcc.Markdown('## Page not found')
 
