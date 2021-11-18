@@ -1,7 +1,9 @@
 # Coupon Estimator
 
 Link to project: https://couponestimator.herokuapp.com/
+
 UCI Dataset: https://archive.ics.uci.edu/ml/datasets/in-vehicle+coupon+recommendation
+
 ## ==Description==
 
 'Coupon Estimator' is an interactive web app deployed on the Heroku platform, using the Plotly-Dash framework.
